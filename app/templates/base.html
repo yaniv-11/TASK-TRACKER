@@ -1,0 +1,192 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Task Tracker - Stay Organized</title>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+      <style>
+        
+          :root {
+              --dark-bg: #1a1a1a;
+              --dark-secondary: #2d2d2d;
+              --accent: #6366f1;
+              --text: #e5e5e5;
+              --success: #10b981;
+              --warning: #f59e0b;
+              --error: #ef4444;
+              --personal: #8b5cf6;
+              --work: #ec4899;
+          }
+  
+          body {
+              margin: 0;
+              padding: 0;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              background-color: var(--dark-bg);
+              color: var(--text);
+          }
+  
+          header {
+              background-color: var(--dark-secondary);
+              padding: 1rem 2rem;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          }
+  
+          .logo {
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: var(--accent);
+          }
+  
+          .auth-links a {
+              color: var(--text);
+              text-decoration: none;
+              margin-left: 1.5rem;
+              padding: 0.5rem 1rem;
+              border-radius: 4px;
+              transition: all 0.3s ease;
+          }
+  
+          .auth-links a:hover {
+              background-color: var(--accent);
+          }
+  
+          main {
+              max-width: 1200px;
+              margin: 2rem auto;
+              padding: 0 1rem;
+              text-align: center;
+          }
+  
+          .hero {
+              margin: 4rem 0;
+          }
+  
+          .hero h1 {
+              font-size: 3rem;
+              margin-bottom: 1rem;
+              background: linear-gradient(45deg, var(--accent), #8b5cf6);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+          }
+  
+          .quotes-section {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 2rem;
+              margin: 4rem 0;
+          }
+  
+          .quote-card {
+              background-color: var(--dark-secondary);
+              padding: 2rem;
+              border-radius: 8px;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+          .quote-card {
+            background-color: var(--dark-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 300px; /* Give cards consistent height */
+        }
+    
+        .quote-img-container {
+            width: 100%;
+            height: 150px; /* Fixed height for image container */
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .quote-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This will cover the container while maintaining aspect ratio */
+        }
+        }
+        
+          .quote-text {
+              font-size: 1.2rem;
+              font-style: italic;
+              margin-bottom: 1rem;
+          }
+  
+          .quote-author {
+              color: var(--accent);
+          }
+  
+          
+
+          footer {
+            background-color: var(--dark-secondary);
+            padding: 0.5rem 1rem;  
+            font-size: 0.85rem;     
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            line-height: 0.8;      
+            }
+            
+
+            
+          }
+      </style>
+  </head>
+  <body>
+      <header>
+          <div class="logo">Task Tracker</div>
+          <nav class="auth-links">
+            {% if current_user.is_authenticated %}
+                <span style="margin-right: 1rem;">こんにちは {{current_user.username}}</span>
+                <a href="{{ url_for('main.logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('main.login') }}">Sign In</a>
+                <a href="{{ url_for('main.register') }}">Register</a>
+            {% endif %}
+        </nav>
+      </header>
+  
+      <main>
+          {% block content %}
+          <section class="hero">
+              <h1>Transform Your Productivity</h1>
+              <p>Stay organized, focused, and accomplish more with our intuitive task tracking system.</p>
+          </section>
+  
+          <section class="quotes-section">
+            <div class="quote-card">
+                <img src="{{ url_for('static', filename='images/1.png') }}" alt="Winston Churchill" class="quote-img">
+                
+            </div>
+        
+            <div class="quote-card">
+                <p class="quote-text">"Consistency is what transforms average into excellence."</p>
+                <p class="quote-author">- Anonymous</p>
+            </div>
+        
+            <div class="quote-card">
+                <img src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Steve Jobs" class="quote-img">
+                
+            </div>
+        </section>
+        
+          {% endblock %}
+      </main>
+  
+      <footer>
+          <p>Built by Yaniv | &copy; 2025 Task Tracker</p>
+      </footer>
+  </body>
+  </html>
