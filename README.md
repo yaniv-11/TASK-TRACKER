@@ -37,7 +37,7 @@
 ---
 ![Screenshot 2025-06-20 232854](https://github.com/user-attachments/assets/f449e483-164e-4f52-94b0-9fcb0297211c)
 
-![Screenshot 2025-06-20 232854](https://github.com/user-attachments/assets/5b36de90-79f8-47a4-8552-a50aa4c8a10a)
+![Screenshot 2025-06-21 104408](https://github.com/user-attachments/assets/c23d62a1-c29d-46ad-85e0-1b6ac4b58295)
 
 
 ![image](https://github.com/user-attachments/assets/3bfbcbe6-c317-48d6-907e-849ba90198d1)
