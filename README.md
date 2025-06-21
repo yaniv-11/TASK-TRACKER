@@ -35,7 +35,9 @@
 | **ORM**       | SQLAlchemy                          |
 
 ---
-![image](https://github.com/user-attachments/assets/1178def9-9842-44f2-a76a-30397a19d407)
+![Screenshot 2025-06-20 232854](https://github.com/user-attachments/assets/f449e483-164e-4f52-94b0-9fcb0297211c)
+
+![Screenshot 2025-06-20 232854](https://github.com/user-attachments/assets/5b36de90-79f8-47a4-8552-a50aa4c8a10a)
 
 
 ![image](https://github.com/user-attachments/assets/3bfbcbe6-c317-48d6-907e-849ba90198d1)
